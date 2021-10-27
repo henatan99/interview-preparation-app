@@ -1,9 +1,8 @@
 import { Interview } from '../components/interview';
-import { interviews } from '../helpers/interviews';
 
-export const InterviewList = () => {
+export const InterviewList = (interviews) => {
     const InterviewListDiv = document.createElement('div');
-    interviews.map( interview => {
+    interviews && interviews.length > 0 && interviews.map( interview => {
         InterviewListDiv.appendChild(Interview(interview, 'Hide'));
     });
     return InterviewListDiv;
