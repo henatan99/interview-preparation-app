@@ -1,18 +1,16 @@
 import { InterviewList } from "./interviews";
 import { SearchForm } from "../components/searchForm";
 
-export const InterviewsContainer = (interviews, container, header) => {
+export const InterviewsContainer = (interviews) => {
     const InterviewsListCont = document.createElement('section');
     const searchForm = SearchForm();
-    const interviewList = InterviewList();
+    const interviewList = InterviewList(interviews);
     InterviewsListCont.appendChild(searchForm);
     InterviewsListCont.appendChild(interviewList);
 
     const handleChange = (value) => {
         const filteredInterviews = interviews.filter((interview) => interview.questionObj.toLowerCase().includes(value && value.toLowerCase()));
-        header.innerText = value || '';
-        // container.appendChild(InterviewList(filteredInterviews));
-        interviewList.innerHTML = InterviewList(filteredInterviews);
+        InterviewsListCont.replaceChild(InterviewList(filteredInterviews), InterviewsListCont.childNodes[1]);
     }
 
     searchForm.addEventListener('input', () => {
