@@ -3,6 +3,10 @@ import { SearchForm } from "../components/searchForm";
 import { Categories } from "./categories";
 
 export const InterviewsContainer = (interviews) => {
+    var inputSearch = null;    
+    var categoryFilter = null;
+    var clickedCategory = null;
+
     const InterviewsListCont = document.createElement('section');
 
     const searchForm = SearchForm();
@@ -13,14 +17,24 @@ export const InterviewsContainer = (interviews) => {
     InterviewsListCont.appendChild(categoriesDiv);
     InterviewsListCont.appendChild(interviewList);
 
-    const handleChange = (value) => {
-        const filteredInterviews = interviews.filter((interview) => interview.questionObj.toLowerCase().includes(value && value.toLowerCase()));
+    const handleFilter = () => {
+        const filteredInterviews = interviews.filter(
+            (interview) =>
+            (!inputSearch || interview.questionObj.toLowerCase().includes(inputSearch && inputSearch.toLowerCase())) && 
+            ((!categoryFilter || categoryFilter === 'all') || interview.category.toLowerCase().includes(categoryFilter && categoryFilter.toLowerCase()))
+            );
         InterviewsListCont.replaceChild(InterviewList(filteredInterviews), InterviewsListCont.childNodes[2]);
     }
 
+    const handleChange = (value) => {
+        inputSearch = value;
+        handleFilter();
+    }
+
     const handleCategoryClick = (value) => {
-        const filteredInterviews = interviews.filter((interview) => interview.category.toLowerCase().includes(value && value.toLowerCase()));
-        InterviewsListCont.replaceChild(InterviewList(filteredInterviews), InterviewsListCont.childNodes[2]);
+        categoryFilter = value;
+        if (clickedCategory) {clickedCategory.className = 'show-category'};
+        handleFilter();
     }
 
     searchForm.addEventListener('input', () => {
@@ -29,8 +43,10 @@ export const InterviewsContainer = (interviews) => {
 
     categoriesDiv.addEventListener('click', (e) => {
         const button = e.target;
+        if (clickedCategory) {clickedCategory.className = null};
+        clickedCategory = button instanceof HTMLButtonElement ? button : clickedCategory;
         button.value && handleCategoryClick(button.value);
-    })
+    });
 
     return InterviewsListCont;
 }

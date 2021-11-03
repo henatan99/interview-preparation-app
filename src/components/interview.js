@@ -1,7 +1,7 @@
 export const Interview = (interview) => {
     const interviewCard = document.createElement('div');
     interviewCard.classList.add('interview-card');
-   
+
     const button = document.createElement('button');
     button.innerText = 'show';
 

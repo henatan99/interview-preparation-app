@@ -9,6 +9,7 @@ export const Categories = (interviews) => {
     categories = [...new Set(categories)];
 
     categoriesDiv.appendChild(categoriesUl);
+    categoriesUl.appendChild(Category('all'));
     categories.map( category => categoriesUl.appendChild(Category(category)));
 
     return categoriesDiv;
