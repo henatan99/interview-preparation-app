@@ -10,7 +10,7 @@ export const Interview = (interview) => {
 
     const answer = document.createElement('p');
     answer.classList.add('hide');
-    answer.innerText = answerObj;
+    answer.innerHTML = answerObj;
 
     button.addEventListener('click', () => {
         button.innerText = button.innerText === 'show' ? 'hide' : 'show';
