@@ -1,5 +1,9 @@
 .show {
     display: block;
+    /* background-color: #6c757d;
+    color: white; */
+    border: 1px solid;
+    padding: 0.5rem;
 }
 
 .hide {
@@ -7,5 +11,16 @@
 }
 
 .show-category {
-    background-color: aqua;
+    background-color: rgb(199, 120, 120);
+}
+
+.interview-card {
+   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+   font-weight: 300;
+}
+
+@media only screen and (min-width: 769px) {
+    .toggle {
+        width: 30%;
+    }
 }

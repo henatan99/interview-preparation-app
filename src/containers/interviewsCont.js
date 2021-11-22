@@ -8,13 +8,14 @@ export const InterviewsContainer = (interviews) => {
     var clickedCategory = null;
 
     const InterviewsListCont = document.createElement('section');
+    InterviewsListCont.classList.add('section', 'd-flex', 'flex-column', 'align-items-center');
 
     const searchForm = SearchForm();
     const interviewList = InterviewList(interviews);
     const categoriesDiv = Categories(interviews);
 
-    InterviewsListCont.appendChild(searchForm);
     InterviewsListCont.appendChild(categoriesDiv);
+    InterviewsListCont.appendChild(searchForm);
     InterviewsListCont.appendChild(interviewList);
 
     const handleFilter = () => {
@@ -33,7 +34,7 @@ export const InterviewsContainer = (interviews) => {
 
     const handleCategoryClick = (value) => {
         categoryFilter = value;
-        if (clickedCategory) {clickedCategory.className = 'show-category'};
+        if (clickedCategory) {clickedCategory.className = 'btn btn-primary m-1'};
         handleFilter();
     }
 
@@ -43,7 +44,7 @@ export const InterviewsContainer = (interviews) => {
 
     categoriesDiv.addEventListener('click', (e) => {
         const button = e.target;
-        if (clickedCategory) {clickedCategory.className = null};
+        if (clickedCategory) {clickedCategory.className = 'btn btn-secondary m-1'};
         clickedCategory = button instanceof HTMLButtonElement ? button : clickedCategory;
         button.value && handleCategoryClick(button.value);
     });
