@@ -66,5 +66,10 @@ export const interviews = [
         questionObj: 'What is the difference between Ruby’s Hash and ActiveSupport’s HashWithIndifferentAccess?',
         answerObj: '<p>The Hash class in Ruby’s core library retrieves values by doing a standard == comparison on the keys. This means that a value stored for a Symbol key (e.g. :my_value) cannot be retrieved using the equivalent String (e.g. ‘my_value’). On the other hand, HashWithIndifferentAccess treats Symbol keys and String keys as equivalent so that the following would work:</p>' + 
                    '<code>h = HashWithIndifferentAccess.new<br>h[:my_value] = \'foo\'<br>h[\'my_value\'] #=> will return "foo"</code>' 
+    }, 
+    {
+        category: 'rails',
+        questionObj: 'What is Ruby on Rails?',
+        answerObj: 'Ruby on Rails is an open-source, web-application framework. Built within the Ruby programming language, it helps people create various applications'
     }
 ];
