@@ -1,9 +1,11 @@
-export const Category = (categoryText) => {
-    const category = document.createElement('button');
-    category.classList.add('btn', 'btn-secondary', 'm-1');
+const Category = (categoryText) => {
+  const category = document.createElement('button');
+  category.classList.add('btn', 'btn-secondary', 'm-1');
 
-    category.value = categoryText;
-    category.innerText = categoryText;
+  category.value = categoryText;
+  category.innerText = categoryText;
 
-    return category;
-}
+  return category;
+};
+
+export default Category;

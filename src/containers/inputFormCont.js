@@ -1,9 +1,11 @@
-import InputForm from "../components/inputForm";
+import InputForm from '../components/inputForm';
 
-export const InputFormCont = () => {
-    const inputFormCont = document.createElement('div');
-    inputFormCont.classList.add('form card');
+const InputFormCont = () => {
+  const inputFormCont = document.createElement('div');
+  inputFormCont.classList.add('form card');
 
-    inputFormCont.appendChild(InputForm());
-    return inputFormCont;
-}
+  inputFormCont.appendChild(InputForm());
+  return inputFormCont;
+};
+
+export default InputFormCont;
