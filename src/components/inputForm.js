@@ -1,7 +1,8 @@
 export const InputForm = () => {
     const formElem = document.createElement('form');
-    formElem.classList.add('input-form');
-    formElem.innerHTML = "<input class='form-input'/>" + "<button>Submit</button>";
+
+    formElem.classList.add('input-form form-group');
+    formElem.innerHTML = '<textarea class="form-input form-control"/>' + '<button class="btn">Submit</button>';
     return formElem;
 }
 

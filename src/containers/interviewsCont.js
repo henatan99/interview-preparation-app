@@ -8,7 +8,7 @@ export const InterviewsContainer = (interviews) => {
     var clickedCategory = null;
 
     const InterviewsListCont = document.createElement('section');
-    InterviewsListCont.classList.add('section', 'd-flex', 'flex-column', 'align-items-center');
+    InterviewsListCont.classList.add('section', 'p-1', 'p-lg-4', 'd-flex', 'flex-column', 'align-items-center');
 
     const searchForm = SearchForm();
     const interviewList = InterviewList(interviews);

@@ -6,7 +6,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const container = document.getElementById('root');
-container.classList.add('container', 'hero');
+container.classList.add('container-fluid', 'p-0', 'hero');
 
 // container.appendChild(InputForm());
 // container.appendChild(InterviewsContainer(interviews));

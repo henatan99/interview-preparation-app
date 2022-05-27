@@ -71,5 +71,5 @@ export const interviews = [
         category: 'rails',
         questionObj: 'What is Ruby on Rails?',
         answerObj: 'Ruby on Rails is an open-source, web-application framework. Built within the Ruby programming language, it helps people create various applications'
-    }
+    },
 ];
